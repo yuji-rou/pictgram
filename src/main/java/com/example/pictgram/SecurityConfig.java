@@ -48,15 +48,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		// @formatter:off
         http.authorizeRequests().antMatchers("/login", "/logout-complete", "/users/new", "/user").permitAll()
-                .anyRequest().authenticated()
-                // ログアウト処理
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/logout-complete").clearAuthentication(true)
-                .deleteCookies("JSESSIONID")
-                .invalidateHttpSession(true).permitAll().and().csrf()
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                // form
-                .and().formLogin().loginPage("/login").defaultSuccessUrl("/topics").failureUrl("/login-failure")
-                .permitAll();
+        		.anyRequest().authenticated()
+        		// ログアウト処理
+        		.and().logout().logoutUrl("/logout").logoutSuccessUrl("/logout-complete").clearAuthentication(true)
+        		.deleteCookies("JSESSIONID")
+        		.invalidateHttpSession(true).permitAll().and().csrf()
+        		.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+        		// form
+        		.and().formLogin().loginPage("/login").defaultSuccessUrl("/topics").failureUrl("/login-failure")
+        		.permitAll();
         // @formatter:on
 	}
 
