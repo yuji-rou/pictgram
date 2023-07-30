@@ -24,6 +24,7 @@ public class SessionsController {
 
 	@GetMapping(path = "/logout-complete")
 	public String logoutComplete(Model model) {
+		System.out.println("ログアウト");
 		model.addAttribute("hasMessage", true);
 		model.addAttribute("class", "alert-info");
 		model.addAttribute("message", "ログアウトしました。");
