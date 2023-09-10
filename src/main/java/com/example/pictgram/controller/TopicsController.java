@@ -61,6 +61,7 @@ import com.drew.imaging.ImageProcessingException;
 import com.drew.metadata.Directory;
 import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
+import org.springframework.http.ResponseEntity;
 
 @Controller
 public class TopicsController {
@@ -98,6 +99,7 @@ public class TopicsController {
 		}
 		model.addAttribute("list", list);
 
+		model.addAttribute("hasFooter", true);
 		return "topics/index";
 	}
 
